@@ -3,7 +3,9 @@ package model;
 public class Kotik {
     private int energy, weight, age;
     public static int number;
-    private String name;
+    private String name, phrase;
+
+
 
     public Kotik(){
         number++;
@@ -39,6 +41,18 @@ public class Kotik {
         return name;
     }
 
+    private boolean hungryCat(){
+        if (energy <= 0){
+            System.out.println("I am hungry! Feed me right now");
+            return false;
+        }
+        else{
+            System.out.println(phrase);
+            return true;
+        }
+    }
+
+
     public void Eat(int food){
         energy += food;
         System.out.println("Я поел " + food + "еды");
@@ -52,32 +66,37 @@ public class Kotik {
     }
 
     public void Jump(){
+        phrase = "Прыг";
+        hungryCat();
         energy -= 1;
-        System.out.println("Прыг");
 
     }
 
     public void Sleep(){
+        phrase = "Z-z-z";
+        hungryCat();
         energy -= 1;
-        System.out.println("Z-z-z");
 
     }
 
     public void Purr(){
+        phrase = "prrrrrr";
+        hungryCat();
         energy -= 1;
-        System.out.println("prrrrrr");
 
     }
 
     public void Lick(){
+        phrase = "*lick*";
+        hungryCat();
         energy -= 1;
-        System.out.println("*lick*");
 
     }
 
     public void Play(){
+        phrase = ")";
+        hungryCat();
         energy -= 1;
-        System.out.println(")");
 
     }
 
